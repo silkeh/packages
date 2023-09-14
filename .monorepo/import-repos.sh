@@ -20,11 +20,11 @@ fi
 
 mapfile -t repos < "${repos_list}"
 
-# if [ ! -e "${mono_dir}" ]
-# then
+if [ ! -d "${mono_dir}" ]
+then
     rm -rf "${mono_dir}"
     git clone https://github.com/getsolus/packages.git "${mono_dir}"
-# fi
+fi
 
 cd "${mono_dir}"
 
@@ -36,20 +36,17 @@ bash "${script_dir}/import-single-repo.sh" \
 # Import all
 for package in "${repos[@]}"
 do
-    if [ ! -d "${package}" ]
-    then
-        while [ "$(jobs | wc -l)" -gt "$(nproc)" ]
-        do
-            sleep 0.25
-        done
+    while [ "$(jobs | wc -l)" -gt "$(nproc)" ]
+    do
+        sleep 0.25
+    done
 
-        bash "${script_dir}/import-single-repo.sh" \
-             "${package}" "${repos_dir}/${package}" "${mono_dir}" \
-             "https://github.com/solus-packages/${package}.git" &
-    fi
+    bash "${script_dir}/import-single-repo.sh" \
+         "${package}" "${repos_dir}/${package}" "${mono_dir}" \
+         "https://github.com/solus-packages/${package}.git" &
 done < "${repos_list}"
 
 wait
 
 echo Failed packages:
-comm -13 <(sort "${repos_list}") <(sort "${mono_dir}/import-success")
+comm -23 <(sort "${repos_list}") <(sort "${mono_dir}/import-success")
