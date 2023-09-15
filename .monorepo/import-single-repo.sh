@@ -21,10 +21,15 @@ cp -a "${orig}" "${dir}"
 if [ "${package}" != "common" ]
 then
     component="$("${script_dir}/find-component.sh" "${package}" "${dir}.orig")"
-    subdir="${component/./\/}/${package}"
+
+    # This does not work
+    # perl/ruby conflict `programming.{perl,ruby}`
+    #subdir="${component/./\/}/${package}"
+    subdir="${component}/${package}"
 
     if [ "${component}" = "skip" ]
     then
+        echo "${package}" >> "${mono}/import-success"
         exit
     fi
 fi

@@ -8,7 +8,7 @@ component_xml="${dir}/component.xml"
 component=""
 
 case "${package}" in
-    calamares|budgie-network-applet|libypkg|linux-next)
+    calamares|budgie-network-applet|libypkg|linux-next|virtiofsd|xfce4-mixer|xfce4-taskmanager)
         component=skip
         ;;
     burn-my-windows)
