@@ -14,7 +14,7 @@ then
     echo "Creating repo list. This may take a long time..."
     gh repo list solus-packages -L10000 --json name,isArchived,visibility | \
         jq -r '.[] | select(.isArchived == false) | select(.visibility == "PUBLIC") | .name' | \
-        grep -Pv '^(.github|budgie-network-applet|libypkg|linux-next)$' | \
+        grep -Pv '^\.github$' | \
         sort > "${repos_list}"
 fi
 
