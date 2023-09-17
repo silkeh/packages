@@ -20,18 +20,13 @@ cp -a "${orig}" "${dir}"
 
 if [ "${package}" != "common" ]
 then
-    component="$("${script_dir}/find-component.sh" "${package}" "${dir}.orig")"
-
-    # This does not work
-    # perl/ruby conflict `programming.{perl,ruby}`
-    #subdir="${component/./\/}/${package}"
-    subdir="${component}/${package}"
-
-    if [ "${component}" = "skip" ]
+    prefix="${package:0:1}"
+    if [[ "${package}" = py* ]]
     then
-        echo "${package}" >> "${mono}/import-success"
-        exit
+        prefix="${package:0:2}"
     fi
+
+    subdir="packages/${prefix,,}/${package}"
 fi
 
 if [ -d "${mono}/${subdir}" ]
