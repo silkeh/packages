@@ -1,6 +1,6 @@
 name       : nginx
 version    : 1.25.2
-release    : 45
+release    : 46
 source     :
     - https://nginx.org/download/nginx-1.25.2.tar.gz : 05dd6d9356d66a74e61035f2a42162f8c754c97cf1ba64e7a801ba158d6c0711
 license    : BSD-2-Clause
