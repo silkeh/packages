@@ -24,10 +24,14 @@ builddeps  :
     - pkgconfig(libzstd)
     - pkgconfig(ostree-1)
     - pkgconfig(xau)
-    - bubblewrap
-    - pyparsing
     - xmlto
+    - pyparsing
+    - bubblewrap
+checkdeps  :
+    - pyparsing
+    - bubblewrap
 rundeps    :
+    - xmlto
     - bubblewrap
 setup      : |
     NOCONFIGURE=1 %autogen
