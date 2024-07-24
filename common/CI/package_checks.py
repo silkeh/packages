@@ -105,6 +105,8 @@ class Git:
 
     @staticmethod
     def _run(path: str, args: List[str]) -> str:
+        logging.debug(f'git: {args} (dir={path})')
+
         res = subprocess.run(['git', '-C', path] + args, capture_output=True, text=True)
         if res.returncode != 0:
             raise Exception("git error: " + res.stderr)
