@@ -1,0 +1,80 @@
+<PISI>
+    <Source>
+        <Name>mosquitto</Name>
+        <Homepage>https://mosquitto.org/</Homepage>
+        <Packager>
+            <Name>Silke Hofstra</Name>
+            <Email>silke@slxh.eu</Email>
+        </Packager>
+        <License>EPL-2.0</License>
+        <PartOf>programming.tools</PartOf>
+        <Summary xml:lang="en">An open source MQTT broker</Summary>
+        <Description xml:lang="en">Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://sources.getsol.us/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>mosquitto</Name>
+        <Summary xml:lang="en">An open source MQTT broker</Summary>
+        <Description xml:lang="en">Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers.
+</Description>
+        <PartOf>programming.tools</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/mosquitto_passwd</Path>
+            <Path fileType="executable">/usr/bin/mosquitto_pub</Path>
+            <Path fileType="executable">/usr/bin/mosquitto_rr</Path>
+            <Path fileType="executable">/usr/bin/mosquitto_sub</Path>
+            <Path fileType="data">/usr/etc/mosquitto/aclfile.example</Path>
+            <Path fileType="data">/usr/etc/mosquitto/mosquitto.conf</Path>
+            <Path fileType="data">/usr/etc/mosquitto/pskfile.example</Path>
+            <Path fileType="data">/usr/etc/mosquitto/pwfile.example</Path>
+            <Path fileType="library">/usr/lib/systemd/system/mosquitto.service</Path>
+            <Path fileType="library">/usr/lib64/libmosquitto.so.1</Path>
+            <Path fileType="library">/usr/lib64/libmosquitto.so.2.0.20</Path>
+            <Path fileType="library">/usr/lib64/libmosquittopp.so.1</Path>
+            <Path fileType="library">/usr/lib64/libmosquittopp.so.2.0.20</Path>
+            <Path fileType="executable">/usr/sbin/mosquitto</Path>
+            <Path fileType="man">/usr/share/man/man1/mosquitto_ctrl.1</Path>
+            <Path fileType="man">/usr/share/man/man1/mosquitto_ctrl_dynsec.1</Path>
+            <Path fileType="man">/usr/share/man/man1/mosquitto_passwd.1</Path>
+            <Path fileType="man">/usr/share/man/man1/mosquitto_pub.1</Path>
+            <Path fileType="man">/usr/share/man/man1/mosquitto_rr.1</Path>
+            <Path fileType="man">/usr/share/man/man1/mosquitto_sub.1</Path>
+            <Path fileType="man">/usr/share/man/man5/mosquitto.conf.5</Path>
+            <Path fileType="man">/usr/share/man/man7/mosquitto-tls.7</Path>
+            <Path fileType="man">/usr/share/man/man7/mqtt.7</Path>
+            <Path fileType="man">/usr/share/man/man8/mosquitto.8</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>mosquitto-devel</Name>
+        <Summary xml:lang="en">Development files for mosquitto</Summary>
+        <Description xml:lang="en">Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="1">mosquitto</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/mosquitto.h</Path>
+            <Path fileType="header">/usr/include/mosquitto_broker.h</Path>
+            <Path fileType="header">/usr/include/mosquitto_plugin.h</Path>
+            <Path fileType="header">/usr/include/mosquittopp.h</Path>
+            <Path fileType="header">/usr/include/mqtt_protocol.h</Path>
+            <Path fileType="library">/usr/lib64/libmosquitto.so</Path>
+            <Path fileType="library">/usr/lib64/libmosquittopp.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/libmosquitto.pc</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/libmosquittopp.pc</Path>
+            <Path fileType="man">/usr/share/man/man3/libmosquitto.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2024-12-03</Date>
+            <Version>2.0.20</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Silke Hofstra</Name>
+            <Email>silke@slxh.eu</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,20 @@
+name       : mosquitto
+version    : 2.0.20
+release    : 1
+source     :
+    - https://github.com/eclipse-mosquitto/mosquitto/archive/refs/tags/v2.0.20.tar.gz : 851fb4b5bf5e2ddc4c341efcfe24c877fcb3a4356c79838103a44751c5731f6a
+homepage   : https://mosquitto.org/
+license    : EPL-2.0
+component  : programming.tools
+summary    : An open source MQTT broker
+description: |
+    Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers.
+builddeps  :
+    - docbook-xml
+setup      : |
+    %cmake_ninja -DWITH_DOCS=no -DWITH_SYSTEMD=yes
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    install -Dm00644 service/systemd/mosquitto.service.notify $installdir/usr/lib/systemd/system/mosquitto.service

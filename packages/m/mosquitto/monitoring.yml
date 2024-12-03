@@ -1,0 +1,8 @@
+releases:
+  id: 6078
+  rss: https://github.com/eclipse-mosquitto/mosquitto/tags.atom
+
+security:
+  cpe:
+  - vendor: eclipse
+    product: mosquitto
