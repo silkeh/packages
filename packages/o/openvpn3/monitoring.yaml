@@ -1,0 +1,7 @@
+---
+releases:
+  id: 378426
+
+# No known CPE. Last checked 2025-06-02.
+security:
+  cpe: ~
