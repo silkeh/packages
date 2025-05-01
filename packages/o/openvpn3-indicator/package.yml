@@ -1,0 +1,21 @@
+name       : openvpn3-indicator
+version    : 2024.10.10
+release    : 1
+source     :
+    - https://github.com/OpenVPN/openvpn3-indicator/archive/bc871e0fcbf3b549939f302d1475f2edb9d2e30d.tar.gz : e096ce6767150bc89d95e09af8580131385dde7324ffce06419170c40c03e545
+homepage   : https://github.com/OpenVPN/openvpn3-indicator/
+license    : AGPL-3.0-only
+component  : desktop
+summary    : Simple GTK indicator GUI for OpenVPN 3
+description: |
+    This is a simple indicator application that controls OpenVPN3 tunnels.
+builddeps  :
+    - desktop-file-utils
+    - libgtk-3
+    - shared-mime-info
+rundeps    :
+    - python-gobject
+    - python-secretstorage
+    - python-setproctitle
+install    : |
+    %make_install PREFIX=/usr

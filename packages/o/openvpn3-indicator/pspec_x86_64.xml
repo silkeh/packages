@@ -1,0 +1,64 @@
+<PISI>
+    <Source>
+        <Name>openvpn3-indicator</Name>
+        <Homepage>https://github.com/OpenVPN/openvpn3-indicator/</Homepage>
+        <Packager>
+            <Name>Silke Hofstra</Name>
+            <Email>silke@slxh.eu</Email>
+        </Packager>
+        <License>AGPL-3.0-only</License>
+        <PartOf>desktop</PartOf>
+        <Summary xml:lang="en">Simple GTK indicator GUI for OpenVPN 3</Summary>
+        <Description xml:lang="en">This is a simple indicator application that controls OpenVPN3 tunnels.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://sources.getsol.us/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>openvpn3-indicator</Name>
+        <Summary xml:lang="en">Simple GTK indicator GUI for OpenVPN 3</Summary>
+        <Description xml:lang="en">This is a simple indicator application that controls OpenVPN3 tunnels.
+</Description>
+        <PartOf>desktop</PartOf>
+        <Files>
+            <Path fileType="config">/etc/xdg/autostart/openvpn3-indicator.desktop</Path>
+            <Path fileType="executable">/usr/bin/openvpn3-indicator</Path>
+            <Path fileType="data">/usr/share/applications/mimeinfo.cache</Path>
+            <Path fileType="data">/usr/share/applications/net.openvpn.openvpn3_indicator.desktop</Path>
+            <Path fileType="data">/usr/share/icons/Yaru/scalable/mimetypes/application-x-openvpn-profile.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/icon-theme.cache</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/apps/openvpn3-indicator.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/mimetypes/application-x-openvpn-profile.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/status/openvpn3-indicator-active-error.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/status/openvpn3-indicator-active.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/status/openvpn3-indicator-configuring.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/status/openvpn3-indicator-idle-error.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/status/openvpn3-indicator-idle.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/status/openvpn3-indicator-loading.svg</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/status/openvpn3-indicator-paused.svg</Path>
+            <Path fileType="man">/usr/share/man/man1/openvpn3-indicator.1.gz</Path>
+            <Path fileType="data">/usr/share/mime/XMLnamespaces</Path>
+            <Path fileType="data">/usr/share/mime/aliases</Path>
+            <Path fileType="data">/usr/share/mime/application/x-openvpn-profile.xml</Path>
+            <Path fileType="data">/usr/share/mime/generic-icons</Path>
+            <Path fileType="data">/usr/share/mime/globs</Path>
+            <Path fileType="data">/usr/share/mime/globs2</Path>
+            <Path fileType="data">/usr/share/mime/icons</Path>
+            <Path fileType="data">/usr/share/mime/magic</Path>
+            <Path fileType="data">/usr/share/mime/mime.cache</Path>
+            <Path fileType="data">/usr/share/mime/packages/application-x-openvpn-profile.xml</Path>
+            <Path fileType="data">/usr/share/mime/subclasses</Path>
+            <Path fileType="data">/usr/share/mime/treemagic</Path>
+            <Path fileType="data">/usr/share/mime/types</Path>
+            <Path fileType="data">/usr/share/mime/version</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2025-05-01</Date>
+            <Version>2024.10.10</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Silke Hofstra</Name>
+            <Email>silke@slxh.eu</Email>
+        </Update>
+    </History>
+</PISI>
