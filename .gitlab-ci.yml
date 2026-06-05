@@ -1,0 +1,51 @@
+---
+stages:
+  - lint
+  - generate
+  - build
+
+default:
+  image: python:alpine
+  before_script:
+    - apk add git
+    - pip install pyyaml
+
+package checks:
+  stage: lint
+  script:
+    - common/CI/package_checks.py --base=origin/main
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_EXTERNAL_PULL_REQUEST_IID
+      changes:
+        - 'packages/**/*'
+
+# TODO: add script checks
+
+.build:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - 'packages/**/*'
+    - if: $CI_MERGE_REQUEST_ID || $CI_EXTERNAL_PULL_REQUEST_IID
+      changes:
+        - 'packages/**/*'
+
+generate:
+  extends: .build
+  needs: []
+  stage: generate
+  script:
+    - common/CI/generate_pipeline.py --output build.gitlab-ci.yml
+  artifacts:
+    paths:
+      - build.gitlab-ci.yml
+
+build:
+  extends: .build
+  stage: build
+  resource_group: unstable-repo
+  trigger:
+    strategy: depend
+    include:
+      - artifact: build.gitlab-ci.yml
+        job: generate
